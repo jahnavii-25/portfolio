@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
 import './App.css';
 
+
+
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Optional: save theme choice in localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(prev => {
+      const newMode = !prev;
+      localStorage.setItem('portfolio-theme', newMode ? 'dark' : 'light');
+      return newMode;
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+      <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+      <div className="page-content">
+        <Home />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </div>
     </div>
   );
 }
