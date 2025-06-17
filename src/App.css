@@ -7,7 +7,6 @@ body, html, #root {
   color: #eee;
 }
 
-
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,6 +15,7 @@ body {
   color: #eee;
 }
 
+/* Home Section */
 .home-section {
   display: flex;
   justify-content: center;
@@ -29,7 +29,6 @@ body {
   color: #333;
 }
 
-/* Left side image */
 .home-image {
   flex: 1;
   min-width: 250px;
@@ -46,7 +45,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Right side text */
 .home-text {
   flex: 1;
   min-width: 280px;
@@ -64,21 +62,18 @@ body {
   line-height: 1.6;
 }
 
-
-
-/* Light mode */
+/* Light & Dark Mode Backgrounds */
 .light-mode {
   background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
   color: #333;
 }
 
-/* Dark mode */
 .dark-mode {
-  background: linear-gradient(to bottom right, #2c3e50, #4ca1af);
+  background: linear-gradient(to bottom right, #2e1437, #4b2b58);
   color: #f1f1f1;
 }
 
-/* Navbar styles */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -101,16 +96,14 @@ body {
   text-decoration: underline;
 }
 
-/* Light mode navbar */
 .light-mode .navbar {
-  background-color: rgba(255, 255, 255, 0.7); /* semi-transparent lilac white */
+  background-color: rgba(255, 255, 255, 0.7);
   color: #333;
   backdrop-filter: blur(8px);
 }
 
-/* Dark mode navbar */
 .dark-mode .navbar {
-  background-color: rgba(30, 15, 45, 0.85); /* deep lilac with opacity */
+  background-color: rgba(30, 15, 45, 0.85);
   color: #f1f1f1;
   backdrop-filter: blur(8px);
 }
@@ -123,20 +116,6 @@ body {
   cursor: pointer;
   color: inherit;
 }
-
-
-/* Light mode with soft lilac gradient */
-.light-mode {
-  background: linear-gradient(to bottom right, #f3e6f5, #e7d6f0);
-  color: #333;
-}
-
-/* Dark mode with complementary deep lilac tones */
-.dark-mode {
-  background: linear-gradient(to bottom right, #2e1437, #4b2b58);
-  color: #f1f1f1;
-}
-
 
 /* Section styling */
 section {
@@ -202,7 +181,6 @@ h1, h2 {
   background-color: #0056b3;
 }
 
-/* Container & section */
 .contact-section {
   background-color: #e6d1e6; /* light lilac */
   color: #7b5e7b; /* dark lilac */
@@ -230,14 +208,14 @@ h1, h2 {
 }
 
 .contact-links a {
-  color: #c8a2c8; /* lilac */
+  color: #c8a2c8;
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
 
 .contact-links a:hover {
-  color: #7b5e7b; /* dark lilac */
+  color: #7b5e7b;
 }
 
 .separator {
@@ -246,7 +224,6 @@ h1, h2 {
   user-select: none;
 }
 
-/* Contact form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -287,7 +264,8 @@ h1, h2 {
 .contact-form button:hover {
   background-color: #7b5e7b;
 }
-/* Hide hamburger menu and show nav links normally */
+
+/* Hamburger Menu */
 .menu-button {
   display: none;
   background: none;
@@ -306,20 +284,17 @@ h1, h2 {
   text-decoration: none;
 }
 
-/* On small screens: */
+/* Responsive Navbar */
 @media (max-width: 600px) {
-  /* Hide logo */
   .logo {
     display: none;
   }
 
-  /* Show hamburger menu button on left */
   .menu-button {
     display: block;
-    order: -1; /* move to start of flex container */
+    order: -1;
   }
 
-  /* Navbar flex layout tweaks */
   .navbar {
     display: flex;
     align-items: center;
@@ -327,12 +302,11 @@ h1, h2 {
     padding: 0.8rem 1rem;
   }
 
-  /* Hide nav links by default */
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px; /* adjust depending on navbar height */
+    top: 50px;
     left: 10px;
     background-color: 10px;
     width: 200px;
@@ -343,7 +317,6 @@ h1, h2 {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* Show nav links when active */
   .nav-links.active {
     display: flex !important;
   }
@@ -355,26 +328,56 @@ h1, h2 {
     transition: color 0.3s ease;
   }
 
-  /* Light mode menu background and text */
   .light-mode .nav-links {
-    background-color: #f3e6f5; /* light lilac */
+    background-color: #f3e6f5;
     color: #333;
   }
+
   .light-mode .nav-links a:hover {
-    color: #7b5e7b; /* dark lilac hover */
+    color: #7b5e7b;
   }
 
-  /* Dark mode menu background and text */
   .dark-mode .nav-links {
-    background-color: #2e1437; /* deep lilac */
+    background-color: #2e1437;
     color: #f1f1f1;
   }
+
   .dark-mode .nav-links a:hover {
-    color: #c8a2c8; /* lilac hover */
+    color: #c8a2c8;
   }
 
-  /* Adjust dark mode toggle button position */
   .toggle-button {
     margin-left: 0.5rem;
   }
+}
+
+/* ================== */
+/*     FOOTER STYLE    */
+/* ================== */
+
+.footer {
+  background-color: #4b2b58;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid #7b5e7b;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #c8a2c8;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #f4a261;
+}
+
+.footer .separator {
+  color: #eee;
+  margin: 0 5px;
 }
