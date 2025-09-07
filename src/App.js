@@ -8,6 +8,8 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
+import WorkExperience from './components/WorkExperience';
+import ExtraCurriculars from './components/extra-curriculors';
 
 
 
@@ -38,6 +40,8 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <WorkExperience />
+        <ExtraCurriculars />
         <Contact />
         <Footer />
       </div>

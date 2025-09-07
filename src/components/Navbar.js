@@ -38,6 +38,12 @@ export default function Navbar({ toggleTheme, isDarkMode }) {
         <a href="#skills" onClick={handleLinkClick}>
           Skills
         </a>
+        <a href="#experience" onClick={handleLinkClick}>
+          Work Experience
+        </a>
+        <a href="#extra-curriculars" onClick={handleLinkClick}>
+          Extra Curriculars
+        </a>
         <a href="#contact" onClick={handleLinkClick}>
           Contact
         </a>

@@ -6,7 +6,7 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="about-content">
         <div className="about-text">
-          <h2>About Me</h2>
+          <h2 className='section-title'>About Me</h2>
           <p>
             I’m Jahnavi, a software developer with a love for crafting elegant and
             efficient code. With a background in React, JavaScript, and backend development,
